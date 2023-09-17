@@ -71,7 +71,7 @@
       </li>
       <li>
         <nuxt-link
-          to="/skmt/staking"
+          to="/world/service-sector/skmt-vault"
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
           ><i class="fa-solid fa-coins"></i
