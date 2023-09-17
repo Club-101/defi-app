@@ -1,0 +1,100 @@
+@import "colors.scss";
+@import "ui.scss";
+
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100% !important;
+  width: 100% !important;
+  font-family: "Poppins";
+  position: relative;
+}
+
+.duvall-font {
+  font-family: "Duvall" !important;
+}
+
+w3m-text {
+  color: yellow !important;
+}
+
+#main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 72px;
+  @media all and (max-width: 576px) {
+    margin-left: 0px;
+  }
+}
+
+#main-content {
+  width: 100%;
+  background-color: $black;
+  background-image: url("../img/icon.png");
+  background-repeat: no-repeat;
+  background-position: 96% 96%;
+  flex-grow: 1;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+}
+
+#main-content-p2e {
+  width: 100%;
+  background-color: $black;
+  flex-grow: 1;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+}
+
+.pt-200 {
+  padding-top: 200px !important;
+}
+
+.game-layout {
+  max-width: 1000px;
+  min-height: 100%;
+  overflow: hidden;
+  .game-sublayout {
+    overflow: auto;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: white;
+    padding-bottom: 4px;
+  }
+
+  p {
+    color: white;
+    font-size: 18px;
+  }
+  .card {
+    background-color: rgba(0, 0, 0, 0.8);
+    &.location-card {
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 1);
+      border-radius: 8px;
+      &:hover {
+        background-color: $black;
+        border: 1px solid $dark-gold;
+      }
+      img {
+        border: 3px solid white;
+        border-radius: 8px;
+      }
+      p {
+        margin-top: 2px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
