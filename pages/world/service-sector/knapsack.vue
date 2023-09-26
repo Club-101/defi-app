@@ -45,7 +45,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "The WYRD Vault - Club 101 - Dens of Dragons",
+  title: "Knapsack - Club 101 - Dens of Dragons",
 });
 
 const actions = [];

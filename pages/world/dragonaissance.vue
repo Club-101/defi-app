@@ -8,7 +8,7 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">The Deagonaissance </span>
+              <span class="duvall-font">Dragonaissance </span>
               <!--<a
                 href=""
                 target="_new"
@@ -48,7 +48,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "The Dragonaissance - Club 101 - Dens of Dragons",
+  title: "Dragonaissance - Club 101 - Dens of Dragons",
 });
 
 const actions = [];

@@ -8,7 +8,7 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">The Service Sector </span>
+              <span class="duvall-font">Service Sector </span>
               <a
                 href="https://club101.gitbook.io/club-101-den-of-dragons/the-six-pillars-of-club-101/the-sixth-pillar-active-member-benefits-amb/generative-active-member-rewards-gamr-moar-utility-and-moar-access"
                 target="_blank"
@@ -67,17 +67,17 @@ definePageMeta({
 });
 
 useHead({
-  title: "The WYRD Stronghold - Club 101 - Dens of Dragons",
+  title: "Service Sector - Club 101 - Dens of Dragons",
 });
 
 const locations = [
   {
-    title: "The Alchemist (Crypto Swapper)",
+    title: "Alchemist (Crypto Swapper)",
     link: "/world/service-sector/alchemist",
     image: "/images/c101/rooms/4a-the-alchemist.png",
   },
   {
-    title: "The Armory (Merch Store)",
+    title: "Armory (Merch Store)",
     link: "/world/service-sector/armory",
     image: "/images/c101/rooms/4b-the-armory.png",
   },
@@ -87,7 +87,7 @@ const locations = [
     image: "/images/c101/rooms/4c-knapsack.png",
   },
   {
-    title: "The SKMT Vault",
+    title: "The Vault",
     link: "/world/service-sector/skmt-vault",
     image: "/images/c101/rooms/4d-skmt-vault.png",
   },

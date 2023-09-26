@@ -8,7 +8,7 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">The SKMT Vault </span>
+              <span class="duvall-font">The Vault </span>
               <!--<a
                 href=""
                 target="_new"
@@ -44,7 +44,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "The SKMT Vault - Club 101 - Dens of Dragons",
+  title: "The Vault - Club 101 - Dens of Dragons",
 });
 
 const actions = [];

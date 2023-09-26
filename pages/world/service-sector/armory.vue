@@ -5,7 +5,7 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">The Armory </span>
+              <span class="duvall-font">Armory </span>
               <!--<a
                 href=""
                 target="_new"
@@ -47,7 +47,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "The Armory - Club 101 - Dens of Dragons",
+  title: "Armory - Club 101 - Dens of Dragons",
 });
 
 const actions = [];

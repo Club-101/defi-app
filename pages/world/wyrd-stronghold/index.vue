@@ -8,7 +8,7 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">The Wyrd Stronghold </span>
+              <span class="duvall-font">Wyrd Stronghold </span>
               <a
                 href="https://club101.gitbook.io/club-101-den-of-dragons/the-six-pillars-of-club-101/the-sixth-pillar-active-member-benefits-amb/generative-active-member-rewards-gamr-moar-utility-and-moar-access"
                 target="_blank"
@@ -55,17 +55,17 @@ definePageMeta({
 });
 
 useHead({
-  title: "The WYRD Stronghold - Club 101 - Dens of Dragons",
+  title: "WYRD Stronghold - Club 101 - Dens of Dragons",
 });
 
 const locations = [
   {
-    title: "The WYRD Membership Chamber: Minting & Migration",
+    title: "WYRD Membership Chamber: Minting & Migration",
     link: "/world/wyrd-stronghold/membership",
     image: "/images/c101/rooms/3a-wyrd-membership-chamber.png",
   },
   {
-    title: "The WYRD Vault: Staking",
+    title: "WYRD Vault: Staking",
     link: "/world/wyrd-stronghold/vault",
     image: "/images/c101/rooms/3b-wyrd-vault.png",
   },

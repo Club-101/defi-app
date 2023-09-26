@@ -8,7 +8,7 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">The Alchemist </span>
+              <span class="duvall-font">Alchemist </span>
               <!--<a
                 href=""
                 target="_new"
@@ -43,7 +43,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "The WYRD Membership - Club 101 - Dens of Dragons",
+  title: "Alchemist - Club 101 - Dens of Dragons",
 });
 
 const actions = [];

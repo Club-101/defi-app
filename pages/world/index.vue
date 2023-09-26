@@ -8,15 +8,28 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">Entrance Chamber</span>
+              <span class="duvall-font">🚪 Entrance Chamber</span>
+              <p class="px-2">
+                <b>🎉 Welcome into the Club 101 DAPP!</b>
+              </p>
             </h4>
-            <p>
-              <b>Welcome into the Club 101 DAPP!</b>
+            <p class="px-2">🔧 This is the home of C101 Utility.</p>
+            <p class="px-2">
+              🧭 How does navigating work?
+              <br />
+              Explore by clicking on the thumbnail visuals, or quick travel to
+              key features via the menu.
             </p>
-            <p>This is the home of C101 Utility.</p>
+            <p class="px-2">
+              🌌 Dive deeper into our universe:
+              <br />
+              📖 Explore the Club101 Gitbook for detailed insights.
+              <br />🎙️ Join the conversation on our Discord - the heart of our
+              community.
+            </p>
             <p>
-              How does navigating work? You can quick travel to key features via
-              the menu, or explore by clicking on the thumbnail visuals.
+              (Links are found on the
+              <nuxt-link to="links">🔗links page</nuxt-link>)
             </p>
           </div>
         </div>

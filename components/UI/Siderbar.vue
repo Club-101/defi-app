@@ -1,11 +1,13 @@
 <template>
   <div id="main-sidebar" class="sidebar" :class="{ toggled: isSidebarOpen }">
     <div class="sidebar-header">
-      <img
-        class="brand-logo"
-        :src="isSidebarOpen ? logo : icon"
-        alt="Logo C101"
-      />
+      <nuxt-link to="/" class="d-flex m-auto">
+        <img
+          class="brand-logo"
+          :src="isSidebarOpen ? logo : icon"
+          alt="Logo C101"
+        />
+      </nuxt-link>
       <a href="javascript:void(0)" class="toggle-menu" @click="toggleSidebar()"
         ><i
           class="fa-solid"
@@ -39,7 +41,7 @@
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
           ><i class="fa-solid fa-vault"></i
-          ><span class="label">The WYRD Vault</span>
+          ><span class="label">WYRD Vault</span>
         </nuxt-link>
       </li>
       <li>
@@ -47,8 +49,7 @@
           to="/world/service-sector/alchemist"
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
-          ><i class="fa-solid fa-flask"></i
-          ><span class="label">The Alchemist</span>
+          ><i class="fa-solid fa-flask"></i><span class="label">Alchemist</span>
         </nuxt-link>
       </li>
       <li>
@@ -56,8 +57,7 @@
           to="/world/service-sector/armory"
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
-          ><i class="fa-solid fa-shield"></i
-          ><span class="label">The Armory</span>
+          ><i class="fa-solid fa-shield"></i><span class="label">Armory</span>
         </nuxt-link>
       </li>
       <li>
@@ -74,8 +74,7 @@
           to="/world/service-sector/skmt-vault"
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
-          ><i class="fa-solid fa-coins"></i
-          ><span class="label">The SKMT Vault</span>
+          ><i class="fa-solid fa-coins"></i><span class="label">The Vault</span>
         </nuxt-link>
       </li>
       <li>
