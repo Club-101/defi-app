@@ -67,12 +67,12 @@ useHead({
 
 const locations = [
   {
-    title: "The WYRD Stronghold",
+    title: "WYRD Stronghold",
     link: "/world/wyrd-stronghold",
     image: "/images/c101/rooms/3-wyrd-stronghold.png",
   },
   {
-    title: "The Service Sector",
+    title: "Service Sector",
     link: "/world/service-sector",
     image: "/images/c101/rooms/4-service-sector.png",
   },
@@ -82,7 +82,7 @@ const locations = [
     image: "/images/c101/rooms/5-arenatorium.png",
   },
   {
-    title: "The Dragonaissance",
+    title: "Dragonaissance",
     link: "/world/dragonaissance",
     image: "/images/c101/rooms/6-the-dragonaissance.png",
   },

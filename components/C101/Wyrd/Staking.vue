@@ -2,10 +2,10 @@
   <div class="row text-left px-1 mt-4">
     <div class="col-12">
       <h5>
-        <i class="fa-solid fa-award"></i> The WYRD Vault
+        <i class="fa-solid fa-award"></i> WYRD Hall
         <i class="fa-solid fa-award"></i>
       </h5>
-      <h5>Vault Count: {{ state.stakedAmount }}</h5>
+      <h5>Staked WYRD Count: {{ state.stakedAmount }}</h5>
       <div v-if="state.canStake">
         <a
           v-if="state.unstakedEggz.length > 0"

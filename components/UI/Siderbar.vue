@@ -40,8 +40,7 @@
           to="/world/wyrd-stronghold/vault"
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
-          ><i class="fa-solid fa-vault"></i
-          ><span class="label">WYRD Vault</span>
+          ><i class="fa-solid fa-vault"></i><span class="label">WYRD Hall</span>
         </nuxt-link>
       </li>
       <li>

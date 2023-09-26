@@ -35,7 +35,7 @@
               Dive in and make the most of your Club 101 experience! And if you
               have more Service suggestions… let us know in the C101 Disco!
             </p>
-            <p class="duvall-font">#DragonsFlyTogether</p>
+            <p>#DragonsFlyTogether</p>
           </div>
         </div>
         <div class="col-12 mb-2">
