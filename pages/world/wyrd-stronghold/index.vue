@@ -66,7 +66,7 @@ const locations = [
   },
   {
     title: "WYRD Hall: Staking",
-    link: "/world/wyrd-stronghold/vault",
+    link: "/world/wyrd-stronghold/hall",
     image: "/images/c101/rooms/3b-wyrd-vault.png",
   },
 ];

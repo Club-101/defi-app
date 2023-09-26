@@ -37,7 +37,7 @@
       </li>
       <li>
         <nuxt-link
-          to="/world/wyrd-stronghold/vault"
+          to="/world/wyrd-stronghold/hall"
           class="sidebar-link"
           :class="{ 'text-center w-auto': !isSidebarOpen }"
           ><i class="fa-solid fa-vault"></i><span class="label">WYRD Hall</span>
