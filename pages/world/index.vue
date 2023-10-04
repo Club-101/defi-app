@@ -13,7 +13,7 @@
                 <b>🎉 Welcome into the Club 101 DAPP!</b>
               </p>
             </h4>
-            <p class="px-2">🔧 This is the home of C101 Utility.</p>
+            <p class="px-2">🔧 This is the home of Club 101 Utility.</p>
             <p class="px-2">
               🧭 How does navigating work?
               <br />
@@ -23,14 +23,23 @@
             <p class="px-2">
               🌌 Dive deeper into our universe:
               <br />
-              📖 Explore the Club101 Gitbook for detailed insights.
-              <br />🎙️ Join the conversation on our Discord - the heart of our
-              community.
+              📖 Explore the
+              <a
+                href="https://club101.gitbook.io/club-101-den-of-dragons/"
+                target="_new"
+                >Club101 Gitbook</a
+              >
+              for detailed insights. <br />🎙️ Join the conversation in our
+              <a href="https://discord.gg/club101" target="_new"
+                >Club 101 Discord</a
+              >
+              - the ❤️ of our community.
             </p>
             <p>
               (Links are found on the
               <nuxt-link to="links">🔗links page</nuxt-link>)
             </p>
+            <p>🐉🚀🫂</p>
           </div>
         </div>
         <div class="col-12 mb-2">

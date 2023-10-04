@@ -16,7 +16,7 @@
           <div class="card text-center h-100">
             <div>
               <nuxt-link to="/world" class="btn btn-primary mt-2 mb-3"
-                >Enter the C101 DAPP</nuxt-link
+                >ENTER THE CLUB 101 DAPP</nuxt-link
               >
               <h2 class="duvall-font">
                 <b>Your Gateway To Mastery Awaits.</b>
