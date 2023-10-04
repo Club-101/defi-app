@@ -1,4 +1,5 @@
 <template>
+  <div id="sidebar-overlay" :class="{ toggled: isSidebarOpen }"></div>
   <div id="main-sidebar" class="sidebar" :class="{ toggled: isSidebarOpen }">
     <div class="sidebar-header">
       <nuxt-link to="/" class="d-flex m-auto">
@@ -111,15 +112,14 @@
 <script setup>
 import icon from "/images/c101/logo/icon.png";
 import logo from "/images/c101/logo/logo.png";
-const { isSidebarOpen, toggleSidebar, closeSidebar } = useUiState();
+const { isSidebarOpen, toggleSidebar } = useUiState();
 </script>
 
 <script>
 const { closeSidebar } = useUiState();
-
 export default {
   mounted() {
-    var mainPanelDiv = document.querySelector("#main");
+    var mainPanelDiv = document.querySelector("#sidebar-overlay");
     var sidebarLinks = document.querySelectorAll(".sidebar-link");
     mainPanelDiv.addEventListener("click", function (event) {
       closeSidebar();
@@ -132,3 +132,19 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+#sidebar-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 10;
+  &.toggled {
+    display: block;
+  }
+}
+</style>

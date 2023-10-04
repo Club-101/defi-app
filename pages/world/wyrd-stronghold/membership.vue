@@ -8,15 +8,17 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">WYRD Membership Chamber </span>
+              <span class="me-2 duvall-font mb-2 d-inline-block"
+                >WYRD Membership Chamber
+              </span>
               <!--<a
                 href=""
                 target="_new"
-                class="btn btn-primary"
+                class="btn btn-primary me-2"
                 ><i class="fa fa-question-circle"></i
               ></a>-->
               <nuxt-link
-                class="btn btn-sm btn-primary float-end"
+                class="btn btn-sm btn-primary float-end back-button"
                 to="/world/wyrd-stronghold"
                 ><i class="fa-solid fa-circle-arrow-left"></i> WYRD
                 Stronghold</nuxt-link

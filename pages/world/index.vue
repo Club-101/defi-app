@@ -8,7 +8,9 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">🚪 Entrance Chamber</span>
+              <span class="me-2 duvall-font mb-2 d-inline-block"
+                >🚪 Entrance Chamber</span
+              >
               <p class="px-2">
                 <b>🎉 Welcome into the Club 101 DAPP!</b>
               </p>

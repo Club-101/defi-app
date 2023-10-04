@@ -8,14 +8,18 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">Wyrd Stronghold </span>
+              <span class="me-2 duvall-font mb-2 d-inline-block"
+                >Wyrd Stronghold
+              </span>
               <a
                 href="https://club101.gitbook.io/club-101-den-of-dragons/the-six-pillars-of-club-101/the-sixth-pillar-active-member-benefits-amb/generative-active-member-rewards-gamr-moar-utility-and-moar-access"
                 target="_blank"
-                class="btn btn-sm btn-primary"
+                class="btn btn-sm btn-primary me-2"
                 ><i class="fa fa-question-circle"></i
               ></a>
-              <nuxt-link class="btn btn-sm btn-primary float-end" to="/world"
+              <nuxt-link
+                class="btn btn-sm btn-primary float-end back-button"
+                to="/world"
                 ><i class="fa-solid fa-circle-arrow-left"></i> Entrance
                 Chamber</nuxt-link
               >

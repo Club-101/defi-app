@@ -34,6 +34,7 @@
 
 <script setup>
 import logo from "/images/c101/logo/logo.png";
+
 definePageMeta({
   layout: "p2e-layout",
 });

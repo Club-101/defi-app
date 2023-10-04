@@ -8,14 +8,18 @@
         <div class="col-12 mb-2">
           <div class="card text-left h-100">
             <h4>
-              <span class="duvall-font">Dragonaissance </span>
+              <span class="me-2 duvall-font mb-2 d-inline-block"
+                >Dragonaissance
+              </span>
               <!--<a
                 href=""
                 target="_new"
-                class="btn btn-primary"
+                class="btn btn-primary me-2"
                 ><i class="fa fa-question-circle"></i
               ></a>-->
-              <nuxt-link class="btn btn-sm btn-primary float-end" to="/world"
+              <nuxt-link
+                class="btn btn-sm btn-primary float-end back-button"
+                to="/world"
                 ><i class="fa-solid fa-circle-arrow-left"></i> Entrance
                 Chamber</nuxt-link
               >
