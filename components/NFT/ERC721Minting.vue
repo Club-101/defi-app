@@ -1,7 +1,9 @@
-import { log } from 'util';
 <template>
   <div class="row text-white">
-    <div v-if="!currentAccount" class="col-12">
+    <div v-if="state.initialized == false">
+      <h3>Initializing...</h3>
+    </div>
+    <div v-else-if="!currentAccount" class="col-12">
       <h4>Please connect your wallet.</h4>
     </div>
     <div v-else-if="props.mintContract.chainId != currentChain" class="col-12">
@@ -43,8 +45,11 @@ import { log } from 'util';
         </button>
       </div>
     </div>
-    <div v-else>
+    <div v-else-if="state.initialized == true">
       <h3>Minting is not active yet.</h3>
+    </div>
+    <div v-else>
+      <h3>Something went wrong.</h3>
     </div>
   </div>
 </template>
@@ -100,6 +105,7 @@ const state = reactive({
   mintPrice: props.price,
   count: 1,
   mintIsActive: false,
+  initialized: false,
 });
 
 const totalPrice = computed(() => {
@@ -114,6 +120,7 @@ onMounted(async () => {
         abi: props.mintContract.abi,
         functionName: "mintIsActive",
       });
+      state.initialized = true;
     }
   } catch (e) {
     console.log(e.message);
