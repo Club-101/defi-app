@@ -18,7 +18,7 @@ export const soakmontTokenContract: TokenSmartContractDefinition = {
   address: "0x1b2fdb1626285b94782af2fda8e270e95cebc3b4",
   abi: soakmontAbi.abi,
   decimals: 18,
-  name: "Ssakmont V2",
+  name: "Soakmont V2",
   ticker: "SKMT",
   chainId: 56,
 };

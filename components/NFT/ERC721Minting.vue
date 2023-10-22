@@ -1,7 +1,10 @@
 import { log } from 'util';
 <template>
   <div class="row text-white">
-    <div v-if="props.mintContract.chainId != currentChain" class="col-12">
+    <div v-if="!currentAccount" class="col-12">
+      <h4>Please connect your wallet.</h4>
+    </div>
+    <div v-else-if="props.mintContract.chainId != currentChain" class="col-12">
       <h4>You are on the wrong chain.</h4>
       <button
         class="btn btn-success ms-1"
