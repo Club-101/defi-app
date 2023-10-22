@@ -88,10 +88,7 @@
 </template>
 
 <script setup>
-import {
-  eggzSmartContract,
-  soakverseOGsSmartContract,
-} from "~~/utils/contracts";
+import { eggzSmartContract } from "~~/utils/contracts";
 import {
   showLoader,
   hideLoader,
@@ -192,7 +189,6 @@ async function getEcosystemBalance() {
     }
 
     const baseURL = `https://eth-mainnet.g.alchemy.com/v2/${config.public.alchemyApiKey}`;
-    const url = `${baseURL}/getNFTs/?owner=${currentAccount.value}&contractAddresses[]=${soakverseOGsSmartContract.address}`;
 
     const staches = await $fetch(url);
     const nftList = staches["ownedNfts"];

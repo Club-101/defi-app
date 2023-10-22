@@ -38,3 +38,11 @@ export const wyrdSmartContract: SmartContractDefinition = {
   ticker: "WYRD",
   chainId: 1,
 };
+
+export const eggzSmartContract: SmartContractDefinition = {
+  address: "0xf3e3e835a262353ec96c32c933133ec320bb3c98",
+  abi: WyrdNFTAbi.abi,
+  name: "The WYRD",
+  ticker: "WYRD",
+  chainId: 1,
+};
