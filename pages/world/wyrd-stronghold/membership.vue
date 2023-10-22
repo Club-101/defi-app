@@ -28,8 +28,21 @@
           </div>
         </div>
         <div class="col-12 mb-2">
-          <div class="card text-center h-100">
-            <h1>Coming Soon!</h1>
+          <div class="card text-left h-100">
+            <h4>Locations</h4>
+            <div class="row">
+              <nuxt-link
+                v-for="location in locations"
+                :key="location.name"
+                class="col-6 col-sm-4 px-1 mb-2"
+                :to="location.link"
+              >
+                <div class="card location-card h-100">
+                  <img class="w-100" :src="location.image" />
+                  <p>{{ location.title }}</p>
+                </div>
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -46,7 +59,18 @@ useHead({
   title: "WYRD Membership Chamber - Club 101 - Dens of Dragons",
 });
 
-const actions = [];
+const locations = [
+  {
+    title: "WYRD Minting Chamber",
+    link: "/world/wyrd-stronghold/minting",
+    image: "/images/c101/rooms/wyrd-minting-chamber.png",
+  },
+  {
+    title: "WYRD Migration Chamber",
+    link: "/world/wyrd-stronghold/migration",
+    image: "/images/c101/rooms/wyrd-migration-chamber.png",
+  },
+];
 </script>
 
 <style lang="scss">

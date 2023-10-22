@@ -183,7 +183,7 @@ h6 {
   .row.full {
     width: 98%;
   }
-  .btn {
+  .btn:not(.btn-not-responsive) {
     font-size: 12px;
     padding: 0.275rem 0.475rem;
   }

@@ -1,126 +1,53 @@
 {
   "abi": [
     {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_ogMerkleRoot",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "_eggz3MerkleRoot",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "_eggz1MerkleRoot",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "_premiumMerkleRoot",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "_standardMerkleRoot",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "_waitlistMerkleRoot",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "string",
-          "name": "_baseURI",
-          "type": "string"
-        }
-      ],
+      "inputs": [],
       "stateMutability": "nonpayable",
       "type": "constructor"
     },
     {
       "inputs": [],
-      "name": "ApprovalCallerNotOwnerNorApproved",
+      "name": "ClaimNotActive",
       "type": "error"
     },
     {
       "inputs": [],
-      "name": "ApprovalQueryForNonexistentToken",
+      "name": "NonExistentToken",
       "type": "error"
     },
     {
       "inputs": [],
-      "name": "ApproveToCaller",
+      "name": "NotAllowed",
       "type": "error"
     },
     {
       "inputs": [],
-      "name": "BalanceQueryForZeroAddress",
+      "name": "NotAuthorizedToClaim",
       "type": "error"
     },
     {
       "inputs": [],
-      "name": "MintERC2309QuantityExceedsLimit",
+      "name": "TokenStaked",
       "type": "error"
     },
     {
-      "inputs": [],
-      "name": "MintToZeroAddress",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "MintZeroQuantity",
-      "type": "error"
-    },
-    {
+      "anonymous": false,
       "inputs": [
         {
+          "indexed": false,
           "internalType": "address",
-          "name": "operator",
+          "name": "previousAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newAdmin",
           "type": "address"
         }
       ],
-      "name": "OperatorNotAllowed",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "OwnerQueryForNonexistentToken",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "OwnershipNotInitializedForExtraData",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "TransferCallerNotOwnerNorApproved",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "TransferFromIncorrectOwner",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "TransferToNonERC721ReceiverImplementer",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "TransferToZeroAddress",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "URIQueryForNonexistentToken",
-      "type": "error"
+      "name": "AdminChanged",
+      "type": "event"
     },
     {
       "anonymous": false,
@@ -177,30 +104,64 @@
       "inputs": [
         {
           "indexed": true,
-          "internalType": "uint256",
-          "name": "fromTokenId",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "toTokenId",
-          "type": "uint256"
-        },
-        {
-          "indexed": true,
           "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "to",
+          "name": "beacon",
           "type": "address"
         }
       ],
-      "name": "ConsecutiveTransfer",
+      "name": "BeaconUpgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isActive",
+          "type": "bool"
+        }
+      ],
+      "name": "ClaimActivation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isActive",
+          "type": "bool"
+        }
+      ],
+      "name": "MintActivation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
       "type": "event"
     },
     {
@@ -208,18 +169,99 @@
       "inputs": [
         {
           "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
           "internalType": "address",
-          "name": "previousOwner",
+          "name": "account",
           "type": "address"
         },
         {
           "indexed": true,
           "internalType": "address",
-          "name": "newOwner",
+          "name": "sender",
           "type": "address"
         }
       ],
-      "name": "OwnershipTransferred",
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "by",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "stakedAt",
+          "type": "uint256"
+        }
+      ],
+      "name": "Stake",
       "type": "event"
     },
     {
@@ -248,13 +290,128 @@
       "type": "event"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "by",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "stakedAt",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "unstakedAt",
+          "type": "uint256"
+        }
+      ],
+      "name": "Unstake",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "WyrdFromMapClaimed",
+      "type": "event"
+    },
+    {
       "inputs": [],
-      "name": "OPERATOR_FILTER_REGISTRY",
+      "name": "DEFAULT_ADMIN_ROLE",
       "outputs": [
         {
-          "internalType": "contract IOperatorFilterRegistry",
+          "internalType": "bytes32",
           "name": "",
-          "type": "address"
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINTER_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "PAUSER_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "UPGRADER_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
         }
       ],
       "stateMutability": "view",
@@ -263,8 +420,21 @@
     {
       "inputs": [
         {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "adminBurner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
-          "name": "operator",
+          "name": "to",
           "type": "address"
         },
         {
@@ -299,44 +469,12 @@
     },
     {
       "inputs": [],
-      "name": "baseURI",
+      "name": "canStake",
       "outputs": [
         {
-          "internalType": "string",
+          "internalType": "bool",
           "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "eggz1AmountNftPerWallet",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "eggz1MerkleRoot",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
+          "type": "bool"
         }
       ],
       "stateMutability": "view",
@@ -346,47 +484,23 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_quantity",
+          "name": "number",
           "type": "uint256"
-        },
-        {
-          "internalType": "bytes32[]",
-          "name": "_proof",
-          "type": "bytes32[]"
         }
       ],
-      "name": "eggz1WhitelistMint",
+      "name": "changeMaxSupply",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "eggz3AmountNftPerWallet",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [],
-      "name": "eggz3MerkleRoot",
+      "name": "claimIsActive",
       "outputs": [
         {
-          "internalType": "bytes32",
+          "internalType": "bool",
           "name": "",
-          "type": "bytes32"
+          "type": "bool"
         }
       ],
       "stateMutability": "view",
@@ -395,17 +509,12 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_quantity",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes32[]",
-          "name": "_proof",
-          "type": "bytes32[]"
+          "internalType": "uint256[]",
+          "name": "mapIds",
+          "type": "uint256[]"
         }
       ],
-      "name": "eggz3WhitelistMint",
+      "name": "claimWyrdFromMaps",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -430,19 +539,136 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_to",
-          "type": "address"
-        },
+      "inputs": [],
+      "name": "getPrice",
+      "outputs": [
         {
           "internalType": "uint256",
-          "name": "_quantity",
+          "name": "",
           "type": "uint256"
         }
       ],
-      "name": "giveaway",
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRoleMember",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleMemberCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_registryContract",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_mapContract",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -473,9 +699,54 @@
     },
     {
       "inputs": [],
-      "name": "mint",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "mapNFT",
+      "outputs": [
+        {
+          "internalType": "contract IMapNFT",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "mintIsActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "mintPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -486,69 +757,6 @@
           "internalType": "string",
           "name": "",
           "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "ogAmountNftPerWallet",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "ogMerkleRoot",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_quantity",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes32[]",
-          "name": "_proof",
-          "type": "bytes32[]"
-        }
-      ],
-      "name": "ogWhitelistMint",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -574,19 +782,20 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "premiumAmountNftPerWallet",
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "bool",
           "name": "",
-          "type": "uint256"
+          "type": "bool"
         }
       ],
       "stateMutability": "view",
@@ -594,7 +803,7 @@
     },
     {
       "inputs": [],
-      "name": "premiumMerkleRoot",
+      "name": "proxiableUUID",
       "outputs": [
         {
           "internalType": "bytes32",
@@ -609,16 +818,60 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_quantity",
+          "name": "_count",
           "type": "uint256"
-        },
-        {
-          "internalType": "bytes32[]",
-          "name": "_proof",
-          "type": "bytes32[]"
         }
       ],
-      "name": "premiumWhitelistMint",
+      "name": "publicMint",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registry",
+      "outputs": [
+        {
+          "internalType": "contract IRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -627,24 +880,16 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "to",
           "type": "address"
-        }
-      ],
-      "name": "publicAmountNftPerWallet",
-      "outputs": [
+        },
         {
           "internalType": "uint256",
-          "name": "",
+          "name": "tokenId",
           "type": "uint256"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "renounceOwnership",
+      "name": "safeMint",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -701,19 +946,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "sellingStep",
-      "outputs": [
-        {
-          "internalType": "enum WizhNFT.Step",
-          "name": "",
-          "type": "uint8"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "address",
@@ -735,11 +967,11 @@
       "inputs": [
         {
           "internalType": "string",
-          "name": "_baseURI",
+          "name": "uri",
           "type": "string"
         }
       ],
-      "name": "setBaseUri",
+      "name": "setBaseURI",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -747,90 +979,12 @@
     {
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "_merkleRoot",
-          "type": "bytes32"
+          "internalType": "bool",
+          "name": "_canStake",
+          "type": "bool"
         }
       ],
-      "name": "setEggz1MerkleRoot",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_merkleRoot",
-          "type": "bytes32"
-        }
-      ],
-      "name": "setEggz3MerkleRoot",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_merkleRoot",
-          "type": "bytes32"
-        }
-      ],
-      "name": "setOGMerkleRoot",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_merkleRoot",
-          "type": "bytes32"
-        }
-      ],
-      "name": "setPremiumMerkleRoot",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_merkleRoot",
-          "type": "bytes32"
-        }
-      ],
-      "name": "setStandardMerkleRoot",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_step",
-          "type": "uint256"
-        }
-      ],
-      "name": "setStep",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_merkleRoot",
-          "type": "bytes32"
-        }
-      ],
-      "name": "setWaitlistMerkleRoot",
+      "name": "setCanStake",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -839,48 +993,81 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "_devAddress",
           "type": "address"
         }
       ],
-      "name": "standardAmountNftPerWallet",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "standardMerkleRoot",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
+      "name": "setDevAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_quantity",
+          "name": "_devFee",
           "type": "uint256"
-        },
-        {
-          "internalType": "bytes32[]",
-          "name": "_proof",
-          "type": "bytes32[]"
         }
       ],
-      "name": "standardWhitelistMint",
+      "name": "setDevFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "setStake",
+          "type": "bool"
+        }
+      ],
+      "name": "setTokensStakeStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_projectTreasury",
+          "type": "address"
+        }
+      ],
+      "name": "setTreasuryAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "stake",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -918,10 +1105,24 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "toggleClaimStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "toggleMintStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_tokenId",
+          "name": "tokenId",
           "type": "uint256"
         }
       ],
@@ -931,6 +1132,25 @@
           "internalType": "string",
           "name": "",
           "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokensLastStakedAt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -973,14 +1193,21 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "newOwner",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "transferOwnership",
+      "name": "unstake",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -989,55 +1216,49 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "newImplementation",
           "type": "address"
         }
       ],
-      "name": "waitlistAmountNftPerWallet",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "waitlistMerkleRoot",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_quantity",
-          "type": "uint256"
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
         },
         {
-          "internalType": "bytes32[]",
-          "name": "_proof",
-          "type": "bytes32[]"
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
         }
       ],
-      "name": "waitlistWhitelistMint",
+      "name": "upgradeToAndCall",
       "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "payable",
       "type": "function"
     },
     {
       "inputs": [],
-      "name": "withdrawAll",
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

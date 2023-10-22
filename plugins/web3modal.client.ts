@@ -14,13 +14,13 @@ import {
 } from "@wagmi/core";
 import { alchemyProvider } from "@wagmi/core/providers/alchemy";
 import { publicProvider } from "@wagmi/core/providers/public";
-import { mainnet, bsc, avalanche } from "@wagmi/core/chains";
+import { mainnet, bsc, avalanche, bscTestnet } from "@wagmi/core/chains";
 import logo from "/images/c101/logo/logo.png";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
 
-  const chains = [mainnet, bsc, avalanche];
+  const chains = [mainnet, bsc, bscTestnet, avalanche];
   const projectId = config.public.walletConnectProjectId;
 
   const { publicClient } = configureChains(chains, [
