@@ -131,6 +131,12 @@ const state = reactive({
   oldContractIds: [],
 });
 
+watch(currentAccount, async () => {
+  if (process.client && currentAccount.value) {
+    await fetchOwnerWallet();
+  }
+});
+
 onMounted(async () => {
   try {
     state.migratingIsActive = await readContract({
@@ -138,7 +144,9 @@ onMounted(async () => {
       abi: props.newContract.abi,
       functionName: "claimIsActive",
     });
-    await fetchOwnerWallet();
+    if (process.client && currentAccount.value) {
+      await fetchOwnerWallet();
+    }
     state.initialized = true;
   } catch (e) {
     console.log(e.message);
