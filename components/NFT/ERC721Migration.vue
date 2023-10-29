@@ -150,7 +150,7 @@ async function fetchOwnerWallet() {
     address: props.oldContract.address,
     abi: props.oldContract.abi,
     functionName: "walletOfOwner",
-    args: ["0xf803f49756B78771225CD6985125C79b07B24D79"],
+    args: [currentAccount.value],
   });
   state.oldContractCount = state.oldContractIds.length;
 }
