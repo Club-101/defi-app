@@ -261,7 +261,6 @@ async function approveMigration() {
             confirmButton: "btn btn-success btn-fill",
           },
         });
-        await fetchOwnerWallet();
       }
     }
   } catch (error) {
