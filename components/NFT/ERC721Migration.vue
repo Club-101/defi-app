@@ -124,7 +124,6 @@ const props = defineProps({
 
 const state = reactive({
   currentAccount: currentAccount.value,
-  count: 1,
   migratingIsActive: false,
   initialized: false,
   oldContractCount: 0,
@@ -167,7 +166,7 @@ async function migrateOldNft() {
   try {
     if (state.oldContractCount > 0) {
       const idsToMigrate =
-        state.oldContractCount > 25
+        state.oldContractCount > props.migrationLimit
           ? state.oldContractIds.slice(0, props.migrationLimit)
           : state.oldContractIds;
       showLoader();
@@ -191,7 +190,6 @@ async function migrateOldNft() {
           title: "Success",
           text: "Migration successful",
           icon: "success",
-          buttonsStyling: false,
           customClass: {
             confirmButton: "btn btn-success btn-fill",
           },
@@ -206,7 +204,6 @@ async function migrateOldNft() {
       title: "Error",
       text: error.message.split("\n")[0],
       icon: "error",
-      buttonsStyling: false,
       customClass: {
         confirmButton: "btn btn-danger btn-fill",
       },

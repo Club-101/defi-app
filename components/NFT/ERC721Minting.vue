@@ -152,7 +152,6 @@ async function mintTokens(count) {
           title: "Success",
           text: "Mint successful",
           icon: "success",
-          buttonsStyling: false,
           customClass: {
             confirmButton: "btn btn-success btn-fill",
           },
@@ -166,7 +165,6 @@ async function mintTokens(count) {
       title: "Error",
       text: error.message.split("\n")[0],
       icon: "error",
-      buttonsStyling: false,
       customClass: {
         confirmButton: "btn btn-danger btn-fill",
       },

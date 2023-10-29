@@ -2,7 +2,7 @@ import Swal, { SweetAlertOptions } from "sweetalert2";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const options: SweetAlertOptions = {
-    buttonsStyling: true,
+    buttonsStyling: false,
     showLoaderOnConfirm: true,
     showCancelButton: false,
     heightAuto: false,
