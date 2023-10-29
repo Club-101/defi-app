@@ -202,7 +202,7 @@ async function migrateOldNft() {
     console.log(error);
     $swal.fire({
       title: "Error",
-      text: error.message.split("\n")[0],
+      text: error.message,
       icon: "error",
       customClass: {
         confirmButton: "btn btn-danger btn-fill",
