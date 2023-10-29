@@ -32,6 +32,7 @@
           type="button"
           class="btn btn-not-responsive btn-success ms-1"
           @click="migrateOldNft()"
+          v-if="state.isApprovedForAll"
         >
           Migrate
           {{
@@ -39,6 +40,15 @@
               ? props.migrationLimit
               : state.oldContractCount
           }}
+          (Step 2 out of 2)
+        </button>
+        <button
+          type="button"
+          class="btn btn-not-responsive btn-success ms-1"
+          @click="approveMigration()"
+          v-else
+        >
+          Approve Migration (Step 1 out of 2)
         </button>
       </div>
       <div v-else>
@@ -126,6 +136,7 @@ const state = reactive({
   currentAccount: currentAccount.value,
   migratingIsActive: false,
   initialized: false,
+  isApprovedForAll: false,
   oldContractCount: 0,
   oldContractIds: [],
 });
@@ -145,6 +156,7 @@ onMounted(async () => {
     });
     if (process.client && currentAccount.value) {
       await fetchOwnerWallet();
+      await checkIsApprovelForAll();
     }
     state.initialized = true;
   } catch (e) {
@@ -160,6 +172,15 @@ async function fetchOwnerWallet() {
     args: [currentAccount.value],
   });
   state.oldContractCount = state.oldContractIds.length;
+}
+
+async function checkIsApprovelForAll() {
+  state.isApprovedForAll = await readContract({
+    address: props.oldContract.address,
+    abi: props.oldContract.abi,
+    functionName: "isApprovedForAll",
+    args: [currentAccount.value, props.newContract.address],
+  });
 }
 
 async function migrateOldNft() {
@@ -189,6 +210,52 @@ async function migrateOldNft() {
         $swal.fire({
           title: "Success",
           text: "Migration successful",
+          icon: "success",
+          customClass: {
+            confirmButton: "btn btn-success btn-fill",
+          },
+        });
+        await fetchOwnerWallet();
+      }
+    }
+  } catch (error) {
+    hideLoader();
+    console.log(error);
+    $swal.fire({
+      title: "Error",
+      text: error.message.split("\n")[0] + " " + error.message.split("\n")[1],
+      icon: "error",
+      customClass: {
+        confirmButton: "btn btn-danger btn-fill",
+      },
+    });
+  }
+}
+
+async function approveMigration() {
+  try {
+    if (state.oldContractCount > 0) {
+      showLoader();
+      const { request } = await prepareWriteContract({
+        address: props.oldContract.address,
+        abi: props.oldContract.abi,
+        functionName: "setApprovalForAll",
+        args: [props.newContract.address, true],
+      });
+
+      const { hash } = await writeContract(request);
+
+      const data = await waitForTransaction({
+        confirmations: 1,
+        hash,
+      });
+
+      if (data.status == "success") {
+        state.isApprovedForAll = true;
+        hideLoader();
+        $swal.fire({
+          title: "Success",
+          text: "Approval successful, proceed to next step",
           icon: "success",
           customClass: {
             confirmButton: "btn btn-success btn-fill",
