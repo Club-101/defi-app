@@ -28,7 +28,7 @@
         </div>
         <div class="col-12 mb-2">
           <div class="card text-center h-100">
-            <ERC721Minting :mintContract="wyrdSmartContract" :price="0.05" />
+            <ERC721Minting :newContract="wyrdSmartContract" :price="0.05" />
           </div>
         </div>
       </div>

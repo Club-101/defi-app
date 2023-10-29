@@ -1,6 +1,7 @@
 import soakmontAbi from "./abi/soakmontToken.json";
 import soakmontStakingContractAbi from "./abi/soakmontStakingContract.json";
 import WyrdNFTAbi from "./abi/WyrdNFT.json";
+import MapsNFTAbi from "./abi/MapsNFT.json";
 
 export type SmartContractDefinition = {
   address: string;
@@ -36,6 +37,14 @@ export const wyrdSmartContract: SmartContractDefinition = {
   abi: WyrdNFTAbi.abi,
   name: "The WYRD",
   ticker: "WYRD",
+  chainId: 1,
+};
+
+export const mapsSmartContract: SmartContractDefinition = {
+  address: "0x6da5ebe96eafd16cdfc72df3c910740a0e94d184",
+  abi: MapsNFTAbi.abi,
+  name: "Club 101 Member Access Pass",
+  ticker: "MAPS",
   chainId: 1,
 };
 

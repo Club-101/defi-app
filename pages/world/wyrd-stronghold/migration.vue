@@ -28,7 +28,11 @@
         </div>
         <div class="col-12 mb-2">
           <div class="card text-center h-100">
-            <h1>Coming Soon!</h1>
+            <ERC721Migration
+              :newContract="wyrdSmartContract"
+              :oldContract="mapsSmartContract"
+              :migrationLimit="25"
+            />
           </div>
         </div>
       </div>
@@ -37,6 +41,8 @@
 </template>
 
 <script setup>
+import ERC721Migration from "~/components/NFT/ERC721Migration.vue";
+import { wyrdSmartContract, mapsSmartContract } from "~~/utils/contracts";
 definePageMeta({
   layout: "p2e-layout",
 });
@@ -44,8 +50,6 @@ definePageMeta({
 useHead({
   title: "WYRD Migration Chamber - Club 101 - Dens of Dragons",
 });
-
-const actions = [];
 </script>
 
 <style lang="scss">
